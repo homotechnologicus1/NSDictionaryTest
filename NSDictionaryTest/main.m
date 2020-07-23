@@ -10,8 +10,21 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello, World!");
+        NSDictionary *dic = [[NSDictionary alloc]initWithObjectsAndKeys:@"Mr. Choi",@"Name",@"Dunno",@"Age", nil];
+        
+        NSLog(@"name : %@", [dic objectForKey:@"Name"]);
+        NSLog(@"age : %@", [dic objectForKey:@"Age"]);
+        
+        NSMutableDictionary *mdic = [NSMutableDictionary dictionaryWithDictionary:dic];
+        
+        [mdic setObject:@"Korea" forKey:@"Residence"];
+        [mdic setObject:@"brownish" forKey:@"Skin"];
+        
+        NSLog(@"name : %@", [mdic objectForKey:@"Name"]);
+        NSLog(@"age : %@", [mdic objectForKey:@"Age"]);
+        NSLog(@"location : %@", [mdic objectForKey:@"Residence"]);
+        NSLog(@"skin color : %@", [mdic objectForKey:@"Skin"]);
+        
     }
     return 0;
 }
